@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Zadanie-11.6 - Własne Trello</title>
+		<link rel="stylesheet" type="text/css" href="css/style.prefixed.css">
+	</head>
+	<body>
+		<div id="board" class="board">
+			<h1>Kanban board</h1>
+			<button class="create-column">Add a column</button>
+			<div class="column-container"></div>
+		</div>
+		<!-- Scripts -->
+		<script src="js/mustache.min.js"></script>
+
+		<!-- Start - Column template - Mustache -->
+		<script id="column-template" type="x-tmpl-mustache">
+			<div class="column">
+				<h2 class="column-title">{{ name }}</h2>
+				<ul id={{ id }} class="column-card-list"></ul>
+				<button class="btn-delete">X</button>
+				<button class="add-card">Add a card</button>
+			</div>
+		</script>
+		<!-- End - Column template - Mustache -->
+		<!-- Start - Card template - Mustache -->
+		<script id="card-template" type="x-tmpl-mustache">
+			<div class="card">
+				<p class="card-description">{{ description }}</p>
+				<button class="btn-delete">x</button>
+			</div>
+		</script>
+		<!-- End - Card template - Mustache -->
+		<script src="js/Sortable.min.js"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+	</body>
+</html>
